@@ -19,29 +19,10 @@ class Router {
     $uri = explode( '/', $uri );
 
     // Select the appropriate controller
-    $controllerClass = Router::getController( $uri[0] );
-    array_shift( $uri );
+    $controllerClass = Router::getController( array_shift( $uri ) );
 
     // Create new controller
-    $controller = new $controllerClass;
-
-    // Select and call controller method
-    $method = NULL;
-    if ( ( $uri != NULL ) && ( $uri[0] != NULL ) && method_exists( $controller, strtolower( $uri[0] ) ) )
-    {
-      $method = strtolower( $uri[0] );
-
-      // Shift the method out of the args only if found as a valid method
-      array_shift( $uri );
-    }
-    else
-    {
-      // If not found, replace with the default method
-      $method = $controller->getDefaultMethod();
-    }
-
-    // Call the method to create the page
-    $controller->$method( $uri );
+    $controller = new $controllerClass( $uri );
   }
 
   // Format a controller class name to get the class filepath
@@ -54,7 +35,7 @@ class Router {
   private static function getController( $arg )
   {
     // Check if a class is given
-    $controllerClass = ( $arg == NULL ) ? 'IndexController' : ucfirst( strtolower( $arg ) ) . 'Controller';
+    $controllerClass = ( $arg == NULL ) ? DEFAULT_CONTROLLER : ucfirst( strtolower( $arg ) ) . 'Controller';
 
     // Check controller directory for the class
     $controller_dir = scandir( CONTROLLER_PATH );
