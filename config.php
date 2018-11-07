@@ -8,7 +8,7 @@
   // Root Paths
   define( "DS",             DIRECTORY_SEPARATOR );
   define( "ROOT",           $_SERVER["DOCUMENT_ROOT"] );  // No trailing DS
-  define( "FRAMEWORK_PATH", ROOT . "framework" . DS );
+  define( "FRAMEWORK_PATH", ROOT . DS . "framework" . DS );
   define( "APP_PATH",       DS . "application" . DS );
 
   // MVC Paths
@@ -35,7 +35,7 @@
   include_once( FRAMEWORK_PATH . 'Router.class.php' );
   include_once( FRAMEWORK_PATH . 'Controller.class.php' );
   include_once( FRAMEWORK_PATH . 'PageModel.class.php' );
-  include_once( FRAMEWORK_PATH . 'SectionModel.class.php' );
+  include_once( FRAMEWORK_PATH . 'ContentModel.class.php' );
 
   // Define the default Controller
   defined( "DEFAULT_CONTROLLER" ) or define( "DEFAULT_CONTROLLER", "IndexController" );

@@ -6,48 +6,99 @@
 
 class Router {
 
+  /***************************************
+    new Router()
+  ----------------------------------------
+    Constructor, currently does nothing.
+  ***************************************/
   public function __constuct()
   {
 
   }
 
-  // Handle the given page request
+  /***************************************
+    route()
+  ----------------------------------------
+    Trigger the routing of the URI to
+    the appropriate controller/method.
+  ***************************************/
   public function route( $request )
   {
     // Break the URI into parts
     $uri = trim( $request, '/' );
-    $uri = explode( '/', $uri );
+    $uri = array_diff( explode( '/', $uri ), [NULL] );
 
-    // Select the appropriate controller
-    $controllerClass = Router::getController( array_shift( $uri ) );
+    // Select and create the appropriate controller
+    $uri = Router::verifyUriController( $uri );
+    $controller_class = array_shift( $uri );
+    Router::includeController( $controller_class );
+    $controller = new $controller_class();
 
-    // Create new controller
-    $controller = new $controllerClass( $uri );
+    // Select and call the appropriate method
+    $uri = Router::verifyUriMethod( $controller, $uri );
+    $method = array_shift( $uri );
+    $controller->$method( $uri );
   }
 
-  // Format a controller class name to get the class filepath
-  private static function controllerPath( $controllerClassName )
+  /***************************************
+    verifyUriController()
+  ----------------------------------------
+    Ensure that the first value in the
+    passed URI is the name of the
+    controller class.
+  ***************************************/
+  private static function verifyUriController( $uri )
   {
-    return CONTROLLER_PATH . $controllerClassName . '.class.php';
-  }
-
-  // Determine the appropriate class given the argument
-  private static function getController( $arg )
-  {
-    // Check if a class is given
-    $controllerClass = ( $arg == NULL ) ? DEFAULT_CONTROLLER : ucfirst( strtolower( $arg ) ) . 'Controller';
-
-    // Check controller directory for the class
     $controller_dir = scandir( CONTROLLER_PATH );
-    if ( !in_array( $controllerClass . '.class.php', $controller_dir ) )
-    {
-      // Use the default controller if not found
-      $controllerClass = DEFAULT_CONTROLLER;
-    }
 
-    // Import the class and return the chosen class name
-    require_once( Router::controllerPath( $controllerClass ) );
-    return $controllerClass;
+    // Check for empty argument
+    if ( count( $uri ) == 0 )
+    {
+      return array( 'IndexController' );
+    }
+    else if ( in_array( ucfirst( strtolower( $uri[0] ) ) . 'Controller.class.php', $controller_dir ) )
+    {
+      $uri[0] = ucfirst( strtolower( $uri[0] ) ) . 'Controller';
+      return $uri;
+    }
+    else
+    {
+      return array_merge( array( DEFAULT_CONTROLLER ), $uri );
+    }
+  }
+
+  /***************************************
+    verifyUriMethod()
+  ----------------------------------------
+    Ensure that the first value in the
+    passed URI is the function to call
+  ***************************************/
+  private static function verifyUriMethod( $controller, $uri )
+  {
+    // Check for no argument
+    // This should point to root controller page, i.e. index
+    if ( count( $uri ) == 0 )
+    {
+      return array( 'index' );
+    }
+    else if ( is_callable( array( $controller, $uri[0] ) ) )
+    {
+      return $uri;
+    }
+    else
+    {
+      return array_merge( array( 'default' ), $uri );
+    } 
+  }
+
+  /***************************************
+    includeController()
+  ----------------------------------------
+    Include the given controller once.
+  ***************************************/
+  private static function includeController( $controllerClassName )
+  {
+    include_once CONTROLLER_PATH . $controllerClassName . '.class.php';
   }
 
 }
