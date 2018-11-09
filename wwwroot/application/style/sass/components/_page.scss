@@ -1,0 +1,17 @@
+/* Defaults */
+
+html, body {
+    background-color: black;
+    color: white; 
+}
+
+body {
+    margin: 0;
+}
+
+section {
+    padding: $spacer_sec;
+    @include themify {
+        background-color: $color-primary;
+    }
+}

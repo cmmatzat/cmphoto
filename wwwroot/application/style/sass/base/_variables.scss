@@ -1,0 +1,33 @@
+/* Spacers */
+$spacer_sec: 3vw;
+$spacer_el: 15px;
+
+
+/* Color Themes */
+$themes: (
+  'dark': (
+    'primary': #30353d,
+    'secondary': #cde967
+  ),
+  'light': (
+    'primary': #bbe4ee,
+    'secondary': #313638
+  )
+);
+
+/* Colors */
+$color-white:    #FFFFFF;
+$color-black:    #000000;
+
+$color-main-ddd: #081821; 
+$color-main-dd:  #113347;
+$color-main-d:   #226084;
+$color-main-l:   #81BADB;
+$color-main-ll:  #B8E2F9;
+$color-main-lll: #DEF0F9;
+
+$color-daccent:  #D2F461;
+$color-laccent:  #444444;
+
+$color-primary: null;
+$color-secondary: null;

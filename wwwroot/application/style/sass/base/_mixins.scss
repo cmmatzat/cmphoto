@@ -1,0 +1,30 @@
+@mixin screen_wider($size) {
+    @media screen and (min-width: $size) {
+        @content
+    }
+};
+
+@mixin screen_narrower($size) {
+    @media screen and (max-width: $size) {
+        @content
+    }
+};
+
+@mixin themify($themes: $themes) {
+
+  // Iterate over the themes
+  @each $theme, $colors in $themes {
+
+    // Create a selector (e.g. `.tpl-txt.theme-dark, .theme-dark .tpl-txt`)
+    &.theme-#{$theme},
+    .theme-#{$theme} & {
+
+      // Set the theme variables with `!global`
+      $color-primary: map-get($colors, 'primary') !global;
+      $color-secondary: map-get($colors, 'secondary') !global;
+
+      // Output user content
+      @content;
+    }
+  }
+}
