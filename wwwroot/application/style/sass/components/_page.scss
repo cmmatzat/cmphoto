@@ -2,7 +2,8 @@
 
 html, body {
     background-color: black;
-    color: white; 
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
@@ -11,7 +12,9 @@ body {
 
 section {
     padding: $spacer_sec;
+
     @include themify {
-        background-color: $color-primary;
+        background-color: theme-color('main1');
+        color: theme-color('text');
     }
 }

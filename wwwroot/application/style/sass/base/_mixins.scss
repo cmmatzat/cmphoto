@@ -10,21 +10,32 @@
     }
 };
 
-@mixin themify($themes: $themes) {
+@mixin themify($colors: $accent_colors, $themes: $themes) {
 
-  // Iterate over the themes
-  @each $theme, $colors in $themes {
+    // Iterate over each accent color
+    @each $color, $color_map in $colors {
 
-    // Create a selector (e.g. `.tpl-txt.theme-dark, .theme-dark .tpl-txt`)
-    &.theme-#{$theme},
-    .theme-#{$theme} & {
+        $accent_color: $color_map !global;
 
-      // Set the theme variables with `!global`
-      $color-primary: map-get($colors, 'primary') !global;
-      $color-secondary: map-get($colors, 'secondary') !global;
+        // Iterate over each theme
+        @each $theme, $theme_map in $themes {
 
-      // Output user content
-      @content;
+            // Create a selector
+            &.theme-#{$color}.theme-#{$theme},
+            .theme-#{$color} &.theme-#{$theme},
+            .theme-#{$color}.theme-#{$theme} &,
+            .theme-#{$color} .theme-#{$theme} & {
+
+                // Set the theme variables with `!global`
+                $theme_colors: $theme_map !global;
+
+                // Output user content
+                @content;
+            }
+        }
+
+        $theme_colors: $default_theme !global;
     }
-  }
+
+    $accent_color: $default_color !global;
 }
