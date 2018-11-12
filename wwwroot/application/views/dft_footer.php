@@ -4,7 +4,7 @@
 
   </body>
 
-  <script type="text/javascript" src="<?php echo JS_PATH . 'nav.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo JS_PATH . 'dft_nav.js'; ?>"></script>
 
   <?php
     foreach( $pg_js as $js_link )

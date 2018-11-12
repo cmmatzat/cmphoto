@@ -1,0 +1,65 @@
+nav {
+    height: $nav-height;
+    overflow: hidden;
+    background-color: black;
+    position: sticky;
+    top: 0;
+
+    &.nav-expand {
+        overflow: visible;
+    }
+
+    a {
+        padding: 0 $spacer-el; 
+        line-height: $nav-height;
+        text-decoration: none;
+        color: white;
+        display: block;
+        height: $nav-height;
+        border-bottom: 1px solid black;
+
+        &.nav-link, &.nav-menu-control {
+            background-color: map-get($main_colors, 'dark');
+            height: $nav-height - 1;
+        }
+    }
+
+    .nav-menu {
+        height: $nav-height;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: auto $nav-height;
+        grid-template-rows: $nav-height auto;
+        grid-template-areas:
+            "nav-menu-header nav-menu-control"
+            "nav-menu-links nav-menu-links";
+
+        &.nav-menu-expand {
+            height: auto;
+        }
+    
+        .nav-menu-header {
+            grid-area: nav-menu-header;
+        }
+
+        .nav-menu-control {
+            grid-area: nav-menu-control;
+            border-left: 1px solid black;
+            padding: 0;
+            text-align: center;
+        }
+
+        .nav-menu-links {
+            grid-area: nav-menu-links;
+
+            .nav-menu-link {
+                line-height: $nav-menu-height;
+                padding: 0 (2 * $spacer-el); 
+                background-color: map-get($main_colors, 'med');
+                height: $nav-menu-height - 1;
+            }
+        }
+    }
+
+
+}

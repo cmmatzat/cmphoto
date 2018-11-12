@@ -2,76 +2,61 @@
     <!-- Contains list of links, sticks to top of page -->
 
     <nav id="navbar">
-      <div class="nav-container">
 
-        <a class="nav-icon" href="javascript:void(0);" onclick="toggleNav(this)">
-          <div>
-            <i class="fa fa-bars" id="nav-control"></i>
-          </div>
+      <!--<div class="nav-header">-->
+        <a id="nav-control" class="nav-icon" href="javascript:void(0);" onclick="toggleNav()">
+          <i class="fa fa-bars" id="nav-control-icon"></i>
+        </a>
+        <!--<a href="/index" class="nav-title">
+          <h1>Corey Matzat Photography</h1>
+        </a>
+        <a class="nav-header" href="/index">
+          <img src="<?php echo LOGO_PATH . 'logo_white.png'; ?>"/>
+        </a>
+      </div>-->
+
+      <a class="nav-link" href="/index">
+        Home
+      </a>
+
+      <a class="nav-link" href="/about">
+        About
+      </a>
+
+      <div class="nav-menu">
+        <a class="nav-link nav-menu-header" href="/portfolio">
+          Portfolio
+        </a>
+        <a href="javascript:void(0);" class="nav-menu-control" onclick="toggleNavMenu(this)">
+          <i id="hello" class="fas fa-chevron-down nav-menu-control-icon"></i>
         </a>
 
-        <a class="nav-header" href="index">
-          <div >
-            <img src="<?php echo LOGO_PATH . 'logo_white.png'; ?>"/>
-          </div>
-        </a>
-
-        <a class="nav-link" href="/index">
-          <div>
-            Home
-          </div>
-        </a>
-
-        <a class="nav-link" href="/about">
-          <div>
-            About
-          </div>
-        </a>
-
-        <div class="nav-menu" id="nav-menu-ptf">
-          <a class="nav-link nav-menu-header" href="/portfolio">
-
-            <div class="nav-menu-title">
-              Portfolio
+        <div class="nav-menu-links">
+          <a class="nav-menu-link" href="/portfolio/sports">
+            <div>
+              Sports
             </div>
-            <a href="javascript:void(0);"  class="nav-menu-icon" onclick="toggleNavMenu(this)">
-              <i class="fas fa-chevron-down" id="ptf-menu-control"></i>
-            </a>
-
           </a>
-          <div class="nav-menu-content">
-
-            <a class="nav-menu-link" href="/portfolio/sports">
-              <div>
-                Sports
-              </div>
-            </a>
-            <a class="nav-menu-link" href="/portfolio/portraits">
-              <div>
-                Portraits
-              </div>
-            </a>
-            <a class="nav-menu-link" href="/portfolio/nature">
-              <div>
-                Nature
-              </div>
-            </a>
-
-          </div>
+          <a class="nav-menu-link" href="/portfolio/portraits">
+            <div>
+              Portraits
+            </div>
+          </a>
+          <a class="nav-menu-link" href="/portfolio/nature">
+            <div>
+              Nature
+            </div>
+          </a>
         </div>
-
-        <a class="nav-link" href="/contact">
-          <div>
-            Contact
-          </div>
-        </a>
-
-        <a class="nav-link" href="/blog">
-          <div>
-            Blog
-          </div>
-        </a>
-
       </div>
+
+      <a class="nav-link" href="/contact">
+        Contact
+      </a>
+
+      <a class="nav-link" href="/blog">
+        Blog
+      </a>
+
     </nav>
 
