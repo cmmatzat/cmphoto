@@ -1,10 +1,10 @@
-@mixin screen_wider($size) {
+@mixin min_screen($size) {
     @media screen and (min-width: $size) {
         @content
     }
 };
 
-@mixin screen_narrower($size) {
+@mixin max_screen($size) {
     @media screen and (max-width: $size) {
         @content
     }
