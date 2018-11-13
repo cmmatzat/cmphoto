@@ -3,17 +3,15 @@
 
     <nav id="navbar">
 
-      <!--<div class="nav-header">-->
+      <div class="nav-header">
         <a id="nav-control" class="nav-icon" href="javascript:void(0);" onclick="toggleNav()">
           <i class="fa fa-bars" id="nav-control-icon"></i>
         </a>
-        <!--<a href="/index" class="nav-title">
-          <h1>Corey Matzat Photography</h1>
-        </a>
-        <a class="nav-header" href="/index">
+        <h1 id="nav-title">Corey Matzat Photography</h1>
+        <a id="nav-logo" href="/index">
           <img src="<?php echo LOGO_PATH . 'logo_white.png'; ?>"/>
         </a>
-      </div>-->
+      </div>
 
       <a class="nav-link" href="/index">
         Home
@@ -24,26 +22,24 @@
       </a>
 
       <div class="nav-menu">
-        <div class="nav-menu-header">
-          <a class="nav-link nav-menu-title" href="/portfolio">
-            Portfolio
-          </a>
-          <a href="javascript:void(0);" class="nav-menu-control" onclick="toggleNavMenu(this)">
-            <i id="hello" class="fas fa-chevron-down nav-menu-control-icon"></i>
-          </a>
-        </div>
-
-        <div class="nav-menu-links">
-          <a class="nav-menu-link" href="/portfolio/sports">
-            Sports
-          </a>
-          <a class="nav-menu-link" href="/portfolio/portraits">
-            Portraits
-          </a>
-          <a class="nav-menu-link" href="/portfolio/nature">
-            Nature
-          </a>
-        </div>
+        <!-- Nav Menu Main Link -->
+        <a class="nav-link" href="/portfolio">
+          Portfolio
+        </a>
+        <!-- Nav Menu Control Icon -->
+        <a href="javascript:void(0);" class="nav-menu-control" onclick="toggleNavMenu(this)">
+          <i class="fas fa-chevron-down nav-menu-control-icon"></i>
+        </a>
+        <!-- Nav Menu Child Links -->
+        <a class="nav-menu-link" href="/portfolio/sports">
+          Sports
+        </a>
+        <a class="nav-menu-link" href="/portfolio/portraits">
+          Portraits
+        </a>
+        <a class="nav-menu-link" href="/portfolio/nature">
+          Nature
+        </a>
       </div>
 
       <a class="nav-link" href="/contact">
