@@ -1,13 +1,11 @@
 nav {
     height: $nav-height;
+    width: 100%;
     overflow: hidden;
     background-color: black;
-    position: sticky;
+    position: fixed;
     top: 0;
-
-    &.nav-expand {
-        overflow: visible;
-    }
+    transition: $nav-transition;
 
     a {
         padding: 0 $spacer-el; 
@@ -27,26 +25,22 @@ nav {
     .nav-menu {
         height: $nav-height;
         overflow: hidden;
-        display: grid;
-        grid-template-columns: auto $nav-height;
-        grid-template-rows: $nav-height auto;
-        grid-template-areas:
-            "nav-menu-header nav-menu-control"
-            "nav-menu-links nav-menu-links";
+        transition: $nav-transition;
 
-        &.nav-menu-expand {
-            height: auto;
-        }
-    
         .nav-menu-header {
-            grid-area: nav-menu-header;
-        }
+            display: flex;
+            flex-flow: row nowrap;
+    
+            .nav-menu-title {
+                flex: 1 1 auto;
+            }
 
-        .nav-menu-control {
-            grid-area: nav-menu-control;
-            border-left: 1px solid black;
-            padding: 0;
-            text-align: center;
+            .nav-menu-control {
+                border-left: 1px solid black;
+                flex: 0 0 $nav-height - 1;
+                padding: 0;
+                text-align: center;
+            }
         }
 
         .nav-menu-links {

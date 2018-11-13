@@ -12,6 +12,12 @@ html {
 
 body {
     margin: 0;
+    padding-top: $nav-height;
+
+    main {
+        display: block;
+        min-height: 80vh;
+    }
 }
 
 section {
@@ -49,6 +55,7 @@ section {
         margin: $spacer_el;
         font-size: 12pt;
         line-height: 16pt;
+        color: theme-color('text');
 
         a.inline-link {
             font-weight: bold;

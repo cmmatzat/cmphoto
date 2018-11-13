@@ -6,6 +6,9 @@ $spacer_el: 15px;
 $nav-height: 40px;
 $nav-menu-height: 32px;
 
+/* Transitions */
+$nav-transition: height 300ms ease-in-out;
+
 /* Colors */
 $main_colors: (
   'dark-dark':    #162126,

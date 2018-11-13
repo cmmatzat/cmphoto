@@ -24,28 +24,24 @@
       </a>
 
       <div class="nav-menu">
-        <a class="nav-link nav-menu-header" href="/portfolio">
-          Portfolio
-        </a>
-        <a href="javascript:void(0);" class="nav-menu-control" onclick="toggleNavMenu(this)">
-          <i id="hello" class="fas fa-chevron-down nav-menu-control-icon"></i>
-        </a>
+        <div class="nav-menu-header">
+          <a class="nav-link nav-menu-title" href="/portfolio">
+            Portfolio
+          </a>
+          <a href="javascript:void(0);" class="nav-menu-control" onclick="toggleNavMenu(this)">
+            <i id="hello" class="fas fa-chevron-down nav-menu-control-icon"></i>
+          </a>
+        </div>
 
         <div class="nav-menu-links">
           <a class="nav-menu-link" href="/portfolio/sports">
-            <div>
-              Sports
-            </div>
+            Sports
           </a>
           <a class="nav-menu-link" href="/portfolio/portraits">
-            <div>
-              Portraits
-            </div>
+            Portraits
           </a>
           <a class="nav-menu-link" href="/portfolio/nature">
-            <div>
-              Nature
-            </div>
+            Nature
           </a>
         </div>
       </div>
