@@ -1,6 +1,6 @@
 /* Spacers */
-$spacer_sec: 3vw;
-$spacer_el: 15px;
+$spacer-sec: 3vw;
+$spacer-el: 15px;
 
 /* Size Reference */
 $nav-height: 40px;
@@ -13,7 +13,7 @@ $nav-transition: height 300ms ease-in-out;
 $header-font: 'Architects Daughter', Serif;
 
 /* Colors */
-$main_colors: (
+$main-colors: (
   'dark-dark':    #162126,
   'dark':         #2C393F,
   'med-dark':     #425259,
@@ -23,7 +23,7 @@ $main_colors: (
   'light-light':  #EFF6F9
 );
 
-$accent_colors: (
+$accent-colors: (
   'red': (
     'light':      #BA635D,
     'med':        #A04F49,
@@ -55,54 +55,54 @@ $accent_colors: (
   )
 );
 
-$default_color: map-get($accent_colors, 'green');
-$accent_color: $default_color;
+$default-color: map-get($accent-colors, 'green');
+$accent-color: $default-color;
 
 /* Color Themes */
 $themes: (
   'dark-dark': (
     'text':     white,
-    'main1':    map-get($main_colors, 'dark-dark'),
-    'main2':    map-get($main_colors, 'dark'),
-    'accent1':  map-get($accent_color, 'med'),
-    'accent2':  map-get($main_colors, 'med')
+    'main1':    map-get($main-colors, 'dark-dark'),
+    'main2':    map-get($main-colors, 'dark'),
+    'accent1':  map-get($accent-color, 'med'),
+    'accent2':  map-get($main-colors, 'med')
   ),
   'dark': (
     'text':     white,
-    'main1':    map-get($main_colors, 'dark'),
-    'main2':    map-get($main_colors, 'dark-dark'),
-    'accent1':  map-get($accent_color, 'light'),
-    'accent2':  map-get($main_colors, 'med-light')
+    'main1':    map-get($main-colors, 'dark'),
+    'main2':    map-get($main-colors, 'dark-dark'),
+    'accent1':  map-get($accent-color, 'light'),
+    'accent2':  map-get($main-colors, 'med-light')
   ),
   'med': (
     'text':     white,
-    'main1':    map-get($main_colors, 'med'),
-    'main2':    map-get($main_colors, 'dark'),
-    'accent1':  map-get($main_colors, 'light'),
-    'accent2':  map-get($main_colors, 'light-light')
+    'main1':    map-get($main-colors, 'med'),
+    'main2':    map-get($main-colors, 'dark'),
+    'accent1':  map-get($main-colors, 'light'),
+    'accent2':  map-get($main-colors, 'light-light')
   ),
   'light': (
     'text':     black,
-    'main1':    map-get($main_colors, 'light'),
-    'main2':    map-get($main_colors, 'light-light'),
-    'accent1':  map-get($accent_color, 'dark'),
-    'accent2':  map-get($main_colors, 'med-dark')
+    'main1':    map-get($main-colors, 'light'),
+    'main2':    map-get($main-colors, 'light-light'),
+    'accent1':  map-get($accent-color, 'dark'),
+    'accent2':  map-get($main-colors, 'med-dark')
   ),
   'light-light': (
     'text':     white,
-    'main1':    map-get($main_colors, 'light-light'),
-    'main2':    map-get($main_colors, 'light'),
-    'accent1':  map-get($accent_color, 'med'),
-    'accent2':  map-get($main_colors, 'med')
+    'main1':    map-get($main-colors, 'light-light'),
+    'main2':    map-get($main-colors, 'light'),
+    'accent1':  map-get($accent-color, 'med'),
+    'accent2':  map-get($main-colors, 'med')
   ),
   'color': (
     'text':     white,
-    'main1':    map-get($accent_color, 'light'),
-    'main2':    map-get($accent_color, 'med'),
-    'accent1':  map-get($main_colors, 'dark'),
-    'accent2':  map-get($main_colors, 'light-light')
+    'main1':    map-get($accent-color, 'light'),
+    'main2':    map-get($accent-color, 'med'),
+    'accent1':  map-get($main-colors, 'dark'),
+    'accent2':  map-get($main-colors, 'light-light')
   )
 );
 
-$default_theme: map-get($themes, 'dark');
-$theme_colors: $default_theme;
+$default-theme: map-get($themes, 'dark');
+$theme-colors: $default_theme;

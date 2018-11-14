@@ -21,7 +21,7 @@ body {
 }
 
 section {
-    padding: $spacer_sec;
+    padding: $spacer-sec;
 
     @include themify {
         background-color: theme-color('main1');
@@ -29,7 +29,7 @@ section {
     }
 
     h2 {
-        margin: $spacer_el;
+        margin: $spacer-el;
         font-size: 24pt;
         line-height: 24pt;
         text-transform: uppercase;
@@ -40,7 +40,7 @@ section {
     }
 
     h3 {
-        margin: $spacer_el;
+        margin: $spacer-el;
         font-size: 14pt;
         line-height: 14pt;
         text-transform: uppercase;
@@ -52,7 +52,7 @@ section {
     }
 
     p {
-        margin: $spacer_el;
+        margin: $spacer-el;
         font-size: 12pt;
         line-height: 16pt;
         color: theme-color('text');
@@ -81,8 +81,8 @@ section {
 a.hollow-button {
     display: inline-block;
     width: auto;
-    margin: $spacer_el;
-    padding: $spacer_el;
+    margin: $spacer-el;
+    padding: $spacer-el;
     border: 4px solid;
     font-weight: bold;
     text-transform: uppercase;

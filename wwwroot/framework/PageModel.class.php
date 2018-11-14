@@ -22,8 +22,8 @@ class PageModel
     $this->page_el = [];
     $this->page_el['pg_head']     = VIEW_PATH . "dft_head.php";
     $this->page_el['pg_css']      = [];
-    $this->page_el['pg_header']   = false;
     $this->page_el['pg_nav']      = VIEW_PATH . "dft_nav.php";
+    $this->page_el['pg_header']   = false;
     $this->page_el['pg_php']      = [];
     $this->page_el['pg_vars']     = [];
     $this->page_el['pg_content']  = [];
@@ -198,14 +198,14 @@ class PageModel
       include $php_path;
     }
 
+    // Print the page navigation
+    include $this->page_el['pg_nav'];
+
     // Print the header if one is provided
     if ( false != $this->page_el['pg_header'] )
     {
       include $this->page_el['pg_header'];
     }
-
-    // Print the page navigation
-    include $this->page_el['pg_nav'];
 
     // Print page contents
     foreach( $this->page_el['pg_content'] as $pg_content )

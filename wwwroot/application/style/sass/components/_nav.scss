@@ -6,6 +6,7 @@ nav {
     position: fixed;
     top: 0;
     transition: $nav-transition;
+    z-index: 1000;
 
     .nav-header {
         display: flex;
@@ -60,7 +61,7 @@ nav {
         padding: 0 $spacer-el; 
 
         &.nav-link, &.nav-menu-control {
-            background-color: map-get($main_colors, 'dark');
+            background-color: map-get($main-colors, 'dark');
             height: $nav-height - 1;
             border-bottom: 1px solid black;
         }
@@ -89,7 +90,7 @@ nav {
             border-bottom: 1px solid black;
             line-height: $nav-menu-height;
             padding: 0 (2 * $spacer-el); 
-            background-color: map-get($main_colors, 'med');
+            background-color: map-get($main-colors, 'med');
             height: $nav-menu-height - 1;
         }
     }
