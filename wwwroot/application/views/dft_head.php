@@ -15,3 +15,4 @@
     ?>
   </head>
   <body>
+    <main class="theme-green theme-dark-dark">

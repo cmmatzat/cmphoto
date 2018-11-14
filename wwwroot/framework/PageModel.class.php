@@ -178,10 +178,14 @@ class PageModel
   //===========================================================================
   public function printPage()
   {
-    // TODO: Add 'page not found' if no content
+    // Add 'content not found' if no content
     if ( count( $this->page_el['pg_content'] ) == 0 )
     {
-      //$this->addView();
+      // Include Standard Section for default content
+      include_once MODEL_PATH . 'StandardSection.class.php';
+      $default_content = new StandardSection();
+      $default_content->setClass( "theme-dark-dark" );
+      $this->addContent( $default_content );
     }
 
     // Create local vars to be used by page elements

@@ -1,3 +1,4 @@
+    </main>
     <footer id="footer">
       Copyright 2018
     </footer>

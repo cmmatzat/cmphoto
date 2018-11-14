@@ -34,8 +34,8 @@
   // Include important base classes
   include_once( FRAMEWORK_PATH . 'Router.class.php' );
   include_once( FRAMEWORK_PATH . 'Controller.class.php' );
-  include_once( FRAMEWORK_PATH . 'PageModel.class.php' );
   include_once( FRAMEWORK_PATH . 'ContentModel.class.php' );
+  include_once( FRAMEWORK_PATH . 'PageModel.class.php' );
 
   // Define the default Controller
   defined( "DEFAULT_CONTROLLER" ) or define( "DEFAULT_CONTROLLER", "IndexController" );

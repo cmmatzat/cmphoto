@@ -24,7 +24,7 @@ class ContentModel
     $this->sec_el['sec_css']      = [];
     $this->sec_el['sec_php']      = [];
     $this->sec_el['sec_vars']     = [];
-    $this->sec_el['sec_content']  = VIEW_PATH . "not_found.php";
+    $this->sec_el['sec_content']  = [];
     $this->sec_el['sec_js']       = [];
 
     $this->sec_el['sec_vars'] = array(

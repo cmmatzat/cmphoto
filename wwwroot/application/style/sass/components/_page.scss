@@ -14,9 +14,13 @@ body {
     margin: 0;
     padding-top: $nav-height;
 
-    main {
+    @at-root main {
         display: block;
         min-height: 80vh;
+
+        @include themify {
+            background-color: theme-color('main1');
+        }
     }
 }
 
@@ -35,9 +39,10 @@ section {
 
     @at-root h2 {
         margin: $spacer_el;
-        font-size: 24pt;
-        line-height: 24pt;
+        font-size: 28pt;
+        line-height: 28pt;
         text-transform: uppercase;
+        font-family: $header-font;
 
         @include themify {
             color: theme-color('accent1');
@@ -64,6 +69,7 @@ section {
 
         a.inline-link {
             font-weight: bold;
+            text-decoration: none;
 
             @include themify {
                 color: theme-color('accent1');

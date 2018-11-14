@@ -47,3 +47,4 @@ class StringSection extends ContentModel
     $this->setVarKeyValuePair( 'string', $str );
   }
 }
+?>

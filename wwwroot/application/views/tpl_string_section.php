@@ -2,8 +2,9 @@
 /* ----------------------------------- *
  * tpl_string_section.php
  * ----------------------------------- *
- * Create a page section that simply
- * houses a text string.
+ * Create a page section that displays
+ * the given text string in a standard
+ * content area.
  * ----------------------------------- *
  * Model: StringSection
  *	Requires:	string
