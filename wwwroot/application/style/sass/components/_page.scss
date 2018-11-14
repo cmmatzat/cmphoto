@@ -28,8 +28,8 @@ section {
         color: theme-color('text');
     }
 
-    h2 {
-        margin: $spacer-el;
+    @at-root h2 {
+        margin: $spacer_el;
         font-size: 24pt;
         line-height: 24pt;
         text-transform: uppercase;
@@ -39,8 +39,8 @@ section {
         }
     }
 
-    h3 {
-        margin: $spacer-el;
+    @at-root h3 {
+        margin: $spacer_el;
         font-size: 14pt;
         line-height: 14pt;
         text-transform: uppercase;
@@ -51,8 +51,8 @@ section {
         }
     }
 
-    p {
-        margin: $spacer-el;
+    @at-root p {
+        margin: $spacer_el;
         font-size: 12pt;
         line-height: 16pt;
         color: theme-color('text');
