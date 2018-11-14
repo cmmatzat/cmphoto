@@ -28,6 +28,11 @@ section {
         color: theme-color('text');
     }
 
+    .content-width {
+        max-width: $content-width;
+        margin: 0 auto;
+    }
+
     h2 {
         margin: $spacer-el;
         font-size: 24pt;
