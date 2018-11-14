@@ -28,6 +28,11 @@ section {
         color: theme-color('text');
     }
 
+    .content-width {
+        max-width: $content-width;
+        margin: 0 auto;
+    }
+
     @at-root h2 {
         margin: $spacer_el;
         font-size: 24pt;

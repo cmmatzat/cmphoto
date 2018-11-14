@@ -131,6 +131,45 @@ class ContentModel
   }
 
   /***************************************
+    setId()
+  ----------------------------------------
+    Set the Id for the given section
+  ***************************************/
+  public function setId( $sec_id )
+  {
+    $this->setVarKeyValuePair( 'id', $sec_id );
+  }
+
+  /***************************************
+    setClass()
+  ----------------------------------------
+    Overwrite the class for the section
+    with the given class.
+  ***************************************/
+  public function setClass( $sec_class )
+  {
+    $this->setVarKeyValuePair( 'class', $sec_class );
+  }
+
+  /***************************************
+    addClass()
+  ----------------------------------------
+    Add the given class to the list of
+    classes for the element.
+  ***************************************/
+  public function addClass( $sec_class )
+  {
+    if ( !$this->sec_el['sec_vars']['class'] )
+    {
+      $this->setClass( $sec_class );
+    }
+    else
+    {
+      $this->setClass( $this->sec_el['sec_vars']['class'] . ' ' . $sec_class );
+    }
+  }
+
+  /***************************************
     setContent()
   ----------------------------------------
     Set the content to the given view.
