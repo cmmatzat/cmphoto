@@ -35,6 +35,8 @@ class IndexController extends Controller
   ***************************************/
   public function index( $args = false )
   {
+    $this->page_model->setPageHeader( 'hdr_home.php' );
+    $this->page_model->addLocalJs( 'hdr_home.js' );
     $this->page_model->printPage();
   }
 
