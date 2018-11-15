@@ -52,12 +52,15 @@ header {
     }
 
     @include min_screen(600px) {
-        grid-template-rows: auto;
-        grid-template-columns: auto 60%;
-        grid-template-areas:
-        "ti-img ti-txt";
+        &.img-left {
+            grid-template-rows: auto;
+            grid-template-columns: auto 60%;
+            grid-template-areas:
+                "ti-img ti-txt";
+        }
 
         &.img-right {
+            grid-template-rows: auto;
             grid-template-columns: 60% auto;
             grid-template-areas:
                 "ti-txt ti-img";

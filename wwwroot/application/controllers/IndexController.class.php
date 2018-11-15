@@ -4,8 +4,7 @@
     homepage for the website.                 */
 
 // Include needed Content Models
-//include_once( MODEL_PATH . 'ImageLinkSection.class.php' );
-//include_once( MODEL_PATH . 'TextImageTwoColSection.class.php' );
+include_once( MODEL_PATH . 'TextImageSection.class.php' );
 
 class IndexController extends Controller
 {
@@ -37,6 +36,11 @@ class IndexController extends Controller
   {
     $this->page_model->setPageHeader( 'hdr_home.php' );
     $this->page_model->addLocalJs( 'hdr_home.js' );
+
+    $welcome = new TextImageSection( 'cnt_home_welcome.php', 'corey-matzat.jpg', array( 'v' => 'bottom', 'h' => 'left' ) );
+    $welcome->setClass( 'theme-med' );
+    $this->page_model->addContent( $welcome );
+
     $this->page_model->printPage();
   }
 

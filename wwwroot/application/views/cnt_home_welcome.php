@@ -1,0 +1,3 @@
+<h2>Welcome</h2>
+<p>My name is Corey Matzat. I am a sports, portrait, and nature photographer based out of Kansas City. Whether you are in need of someone to photograph your next race, update your family photo, or provide you with some new artwork for your walls, I am here to help!</p>
+<p>Get a feel for my work by browsing my <a class="inline-link" href="/portfolio">portfolio</a>, and see my latest photos over on my <a class="inline-link" href="/blog">blog</a>. When you're ready, <a class="inline-link" href="/contact">send me a message<a> and let me know how I can help meet your photography needs!</p>
