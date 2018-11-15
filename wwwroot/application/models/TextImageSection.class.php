@@ -21,7 +21,7 @@ class TextImageSection extends ContentModel
 {
   // Instance variables
   protected $sec_id_str = 'ti_sec';
-  private const DFLT_POS = array( 'v' => 'top', 'h' => 'left' );
+  const DFLT_POS = array( 'v' => 'top', 'h' => 'left' );
 
   /***************************************
     new TextImageSection()

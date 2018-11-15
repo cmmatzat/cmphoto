@@ -39,6 +39,7 @@ header {
 
 .ti-sec {
     display: grid;
+    justify-items: center;
     grid-template-rows: auto auto;
     grid-template-columns: auto;
     grid-template-areas:
@@ -68,7 +69,7 @@ header {
     }
 
     .ti-sec-img {
-        margin: $spacer-el auto;
+        margin: $spacer-el;
         grid-area: ti-img;
         max-width: $img-width;
         max-height: 50vh;
