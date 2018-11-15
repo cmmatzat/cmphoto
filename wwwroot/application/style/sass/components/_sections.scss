@@ -79,3 +79,71 @@ header {
         grid-area: ti-txt;
     }
 }
+
+.il-sec {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    
+    @include min-screen(500px) {
+        flex-flow: row nowrap;
+    }
+
+    .il-link {
+        position: relative;
+        display: block;
+        padding: $spacer-el;
+        flex: 1 1 auto;
+
+        .il-image {
+            max-width: $img-width-no-buffer;
+            display: block;
+            max-height: 80vh;
+        }
+
+        .il-label {
+            position: absolute;
+            bottom: 2 * $spacer-el + $img-frame;
+            left: 2 * $spacer-el + $img-frame;  
+            padding: $spacer-el;
+            margin: 0;
+            font-size: 18pt;
+            line-height: 16pt;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            text-align: center;
+            text-transform: uppercase;
+            opacity: .7;
+            font-family: $header-font;
+
+            @include min-screen(500px) {
+                padding: $spacer-el / 2;
+                bottom: 1.5 * $spacer-el + $img-frame;
+                left: 1.5 * $spacer-el + $img-frame;  
+                font-size: 12pt;
+                line-height: 8pt;
+            }
+
+            @include min-screen(800px) {
+                font-size: 15pt;
+                line-height: 10pt;
+                bottom: 2 * $spacer-el + $img-frame;
+                left: 2 * $spacer-el + $img-frame;  
+            }
+
+            @include min-screen(1200px) {
+                font-size: 18pt;
+                padding: $spacer-el;
+                line-height: 16pt;
+            }
+
+            @include min-screen(1600px) {
+                font-size: 20pt;
+                line-height: 18pt;
+            }
+        }
+    }
+}
