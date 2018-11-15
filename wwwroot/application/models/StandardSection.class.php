@@ -20,18 +20,18 @@ class StandardSection extends ContentModel
   protected $sec_id_str = 'std_sec';
 
   /***************************************
-    new StringSection()
+    new StandardSection()
   ----------------------------------------
     Initializes the parent Content Model
     and modifies needed defaults for
-    String Section.
+    Standard Section.
   ***************************************/
   public function __construct( $inner_content = "cnt_not_found.php", $alt_path = false )
   {
     parent::__construct();
     
     $this->setContent( 'tpl_standard_section.php' );
-    $this->setInnerContent( $inner_content );
+    $this->setInnerContent( $inner_content, $alt_path );
     $this->restrictContentArea();
   }
 

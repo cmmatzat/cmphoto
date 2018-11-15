@@ -65,7 +65,10 @@ section {
         margin: $spacer_el;
         font-size: 12pt;
         line-height: 16pt;
-        color: theme-color('text');
+
+        @include themify {
+            color: theme-color('text');
+        }
 
         a.inline-link {
             font-weight: bold;
@@ -113,4 +116,10 @@ a.hollow-button {
             }
         }
     }
+}
+
+img.framed {
+    box-shadow: $shadow;
+    background-color: white;
+    padding: $img-frame;
 }

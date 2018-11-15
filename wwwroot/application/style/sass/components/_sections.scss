@@ -36,3 +36,42 @@ header {
         }
     }
 }
+
+.ti-sec {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "ti-img"
+        "ti-txt";
+
+    &.img-bottom {
+        grid-template-areas:
+            "ti-txt"
+            "ti-img";
+    }
+
+    @include min_screen(600px) {
+        grid-template-rows: auto;
+        grid-template-columns: auto 60%;
+        grid-template-areas:
+        "ti-img ti-txt";
+
+        &.img-right {
+            grid-template-columns: 60% auto;
+            grid-template-areas:
+                "ti-txt ti-img";
+        }
+    }
+
+    .ti-sec-img {
+        margin: $spacer-el auto;
+        grid-area: ti-img;
+        max-width: $img-width;
+        max-height: 50vh;
+    }
+
+    .ti-sec-txt {
+        grid-area: ti-txt;
+    }
+}
