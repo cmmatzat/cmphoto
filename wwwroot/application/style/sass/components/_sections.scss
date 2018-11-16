@@ -38,45 +38,44 @@ header {
 }
 
 .ti-sec {
-    display: grid;
+    display: flex;
     justify-items: center;
-    grid-template-rows: auto auto;
-    grid-template-columns: auto;
-    grid-template-areas:
-        "ti-img"
-        "ti-txt";
+    align-items: center;
 
-    &.img-bottom {
-        grid-template-areas:
-            "ti-txt"
-            "ti-img";
+    &.img-top {
+        flex-flow: column nowrap;
     }
 
-    @include min_screen(600px) {
+    &.img-bottom {
+        flex-flow: column-reverse nowrap;
+    }
+
+    @include min-screen(600px) {
         &.img-left {
-            grid-template-rows: auto;
-            grid-template-columns: auto 60%;
-            grid-template-areas:
-                "ti-img ti-txt";
+            flex-flow: row nowrap;
         }
 
         &.img-right {
-            grid-template-rows: auto;
-            grid-template-columns: 60% auto;
-            grid-template-areas:
-                "ti-txt ti-img";
+            flex-flow: row-reverse nowrap;
         }
     }
 
     .ti-sec-img {
         margin: $spacer-el;
-        grid-area: ti-img;
+        flex: 0 1 auto;
         max-width: $img-width;
         max-height: 50vh;
     }
 
+    @include min-screen(600px) {
+        .ti-sec-img {
+            max-width: 30vw;
+            min-height: 180px; 
+        }
+    }
+
     .ti-sec-txt {
-        grid-area: ti-txt;
+        flex: 1 1 auto;
     }
 }
 
@@ -92,14 +91,16 @@ header {
 
     .il-link {
         position: relative;
-        display: block;
         padding: $spacer-el;
-        flex: 1 1 auto;
+        flex: 0 1 auto;
 
         .il-image {
             max-width: $img-width-no-buffer;
             display: block;
-            max-height: 80vh;
+            @include min-screen(500px) {
+                max-height: 80vh;
+                min-height: 180px;
+            }
         }
 
         .il-label {
