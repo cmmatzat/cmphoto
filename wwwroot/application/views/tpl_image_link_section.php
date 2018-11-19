@@ -16,13 +16,13 @@ $sec_vars = array_shift( $pg_vars['il_sec'] );
 ?>
 
 <section <?php if ( $sec_vars['id'] ) { echo 'id="' . $sec_vars['id'] . '"'; } ?> <?php if ( $sec_vars['class'] ) { echo 'class="' . $sec_vars['class'] . '"'; } ?>>
-  <div class="il-sec content-width">
 <?php /* ===== Optional Text Header ===== */ ?>
 <?php if ( $sec_vars['text_header'] ): ?>
-    <div class="il-header">
-      <?php include $sec_vars['text_header']; ?>
-    </div>
-<?php endif; ?>
+  <div class="content-width il-header">
+    <?php include $sec_vars['text_header']; ?>
+  </div>
+<?php endif; ?>  
+  <div class="il-sec content-width">
 <?php /* ===== Include Each Image Link ===== */ ?>
 <?php foreach ( $sec_vars['image_links'] as $link ): ?>
     <a class="il-link" href="<?php echo $link['url']; ?>">
