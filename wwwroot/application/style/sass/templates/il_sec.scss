@@ -1,84 +1,13 @@
-footer {
-    padding: $spacer-el;
-    background-color: black;
-    color: map-get($main-colors, 'dark');
-    font-size: 10pt;
-    text-align: center;
-}
+//========================================================//
+//  Templates > Image Link Section
+//========================================================//
+//  Unique style for a Image Link Section
+//========================================================//
 
-header {
-    display: block;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
+// Import Utilities
+@import "../utilities/all";
 
-    h1 {
-        margin: 0;
-    }
-
-    &.hdr-home {
-        background-color: map-get($main-colors, 'light');
-        background-size: cover;
-        background-position: center;
-        height: $hdr-full-height;
-        position: relative;
-        border-bottom: 20px solid black;
-
-        img {
-            max-width: 50%;
-            max-height: 30%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            margin: $spacer-sec;
-            padding: $spacer-el;
-            background-color: rgba(255, 255, 255, .6);
-        }
-    }
-}
-
-.ti-sec {
-    display: flex;
-    justify-items: center;
-    align-items: center;
-
-    &.img-top {
-        flex-flow: column nowrap;
-    }
-
-    &.img-bottom {
-        flex-flow: column-reverse nowrap;
-    }
-
-    @include min-screen(600px) {
-        &.img-left {
-            flex-flow: row nowrap;
-        }
-
-        &.img-right {
-            flex-flow: row-reverse nowrap;
-        }
-    }
-
-    .ti-sec-img {
-        margin: $spacer-el;
-        flex: 0 1 auto;
-        max-width: $img-width;
-        max-height: 50vh;
-    }
-
-    @include min-screen(600px) {
-        .ti-sec-img {
-            max-width: 30vw;
-            min-height: 180px; 
-        }
-    }
-
-    .ti-sec-txt {
-        flex: 1 1 auto;
-    }
-}
-
+// Define Style
 .il-sec {
     display: flex;
     flex-flow: row wrap;
@@ -95,7 +24,7 @@ header {
         flex: 0 1 auto;
 
         .il-image {
-            max-width: $img-width-no-buffer;
+            max-width: calc(100% - (2 * #{$img-frame}));
             display: block;
             @include min-screen(500px) {
                 max-height: 80vh;

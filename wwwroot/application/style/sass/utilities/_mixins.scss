@@ -1,0 +1,64 @@
+//========================================================//
+//  Utilities > Mixins
+//========================================================//
+//  Definitions for all mixins needed for the site.
+//========================================================//
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  min_screen( size )
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Description:
+//      Shortcut for creating a media querey for
+//      a screen larger than the given size.
+//  Arguments:
+//      size - A pixel value to be the querey
+//          screen cutoff size
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+@mixin min_screen($size) {
+    @media screen and (min-width: $size) {
+        @content
+    }
+};
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  max_screen( size )
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Description:
+//      Shortcut for creating a media querey for
+//      a screen smaller than the given size.
+//  Arguments:
+//      size - A pixel value to be the querey
+//          screen cutoff size
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+@mixin max_screen($size) {
+    @media screen and (max-width: $size) {
+        @content
+    }
+};
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  themify( property, variant )
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Description:
+//      Recursively loops through color themes
+//      and provides the desired color.
+//  Arguments:
+//      property - The style property that is
+//          being colored based on a theme
+//      variant - The color variant of a theme
+//          to be used for the given property
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+@mixin themify( $property, $variant, $themes: $theme-maps, $accents: $accent-colors ) {
+    @each $theme, $color-maps in $themes {
+        @each $color, $shades in $accents {
+            &.theme-#{$color}.theme-#{$theme},
+            .theme-#{$color} &.theme-#{$theme},
+            .theme-#{$color}.theme-#{$theme} &,
+            .theme-#{$color} .theme-#{$theme} & {
+                #{$property}: get_theme_color( $color-maps, $variant, $shades );
+            }
+        }
+    }
+}

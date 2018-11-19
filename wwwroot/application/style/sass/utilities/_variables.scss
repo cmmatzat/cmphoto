@@ -1,0 +1,40 @@
+//========================================================//
+//  Utilities > Variables
+//========================================================//
+//  Includes universal variables for quick control of
+//  full site style.
+//========================================================//
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Sizes/Spacers
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+$nav-height: 40px;
+$nav-menu-height: 32px;
+$content-width: 1000px;
+$img-frame: 10px;
+
+$spacer-sec:    3vw;    // Variable spacer b/w edge of section and content
+$spacer-el:     15px;   // Constant spacer b/w members of section
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Fonts/Text
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+$header-font: 'Architects Daughter', Serif;
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Borders/Shadows
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+$shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4), 0 0 20px 0 rgba(0, 0, 0, 0.25);
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Transitions
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+$nav-transition: height 300ms ease-in-out;

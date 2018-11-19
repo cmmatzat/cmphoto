@@ -34,6 +34,7 @@ class ImageLinkSection extends ContentModel
     parent::__construct();
     
     $this->setContent( 'tpl_image_link_section.php' );
+    $this->addLocalCss( 'il_sec.css' );
     
     $this->addImageLinks( $images, $image_path );
     

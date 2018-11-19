@@ -1,0 +1,34 @@
+//========================================================//
+//  Utilities > Functions
+//========================================================//
+//  Definitions for all functions needed for the site.
+//========================================================//
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  get_theme_color( colors, variant, accents )
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Description:
+//      Function to fetch the appropriate color
+//      in a theme.
+//  Arguments:
+//      colors - A color map for a given theme
+//      variant - Text name for the particular
+//          color within the theme colors
+//      accents - An array of accent color
+//          shades
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+@function get_theme_color( $colors, $variant, $accents ) {
+    @if $variant == 'text' {
+        @return map-get( $colors, $variant );
+    }
+
+    $color-map: map-get( $colors, $variant );
+    $pallette: map-get( $color-map, 'map' );
+    $shade: map-get( $color-map, 'shade' );
+
+    @if $pallette == 'main' {
+        @return map-get( $main-colors, $shade );
+    } @else {
+        @return map-get( $accents, $shade );
+    }
+}

@@ -1,0 +1,53 @@
+//========================================================//
+//  Site > Elements
+//========================================================//
+//  Includes style for common site elements, such as
+//  common button types or image styles.
+//========================================================//
+
+// A hollow button is a link with a border of the same color
+a.hollow-button {
+    display: inline-block;
+    width: auto;
+    margin: $spacer-el;
+    padding: $spacer-el;
+    border: 4px solid;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    @include themify( 'border-color', 'accent1' );
+    @include themify( 'color', 'accent1' );
+
+    @include min_screen(600px) {
+        transition: color 200ms ease-in-out, border-color 200ms ease-in-out;
+
+        &:hover {  
+            @include themify( 'border-color', 'accent2' );
+            @include themify( 'color', 'accent2' );
+        }
+    }
+}
+
+// An inline link is amidst a block of text and is bold and a new color
+a.inline-link {
+    font-weight: bold;
+    text-decoration: none;
+
+    @include themify( 'color', 'accent1' );
+
+    @include min_screen(600px) {
+
+        transition: color 200ms ease-in-out;
+
+        &:hover {
+            @include themify( 'color', 'accent2' );
+        }
+    }
+}
+
+// A framed image has a white border
+img.framed {
+    box-shadow: $shadow;
+    background-color: white;
+    padding: $img-frame;
+}

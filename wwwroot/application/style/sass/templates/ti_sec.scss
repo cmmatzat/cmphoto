@@ -1,0 +1,51 @@
+//========================================================//
+//  Templates > Text/Image Section
+//========================================================//
+//  Unique style for a Text/Image Section
+//========================================================//
+
+// Import Utilities
+@import "../utilities/all";
+
+// Define Style
+.ti-sec {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+    &.img-top {
+        flex-flow: column nowrap;
+    }
+
+    &.img-bottom {
+        flex-flow: column-reverse nowrap;
+    }
+
+    @include min_screen(600px) {
+        &.img-left {
+            flex-flow: row nowrap;
+        }
+
+        &.img-right {
+            flex-flow: row-reverse nowrap;
+        }
+    }
+
+    .ti-sec-img {
+        margin: $spacer-el;
+        flex: 0 1 auto;
+        max-width: calc(100% - (2 * (#{$img-frame} + #{$spacer-el})));
+        max-height: 50vh;
+    }
+
+    @include min_screen(600px) {
+        .ti-sec-img {
+            max-width: 30vw;
+            min-height: 180px; 
+        }
+    }
+
+    .ti-sec-txt {
+        flex: 1 1 auto;
+    }
+}

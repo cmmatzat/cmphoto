@@ -1,0 +1,112 @@
+//========================================================//
+//  Utilities > Themes
+//========================================================//
+//  Contains arrays for site colors and themes.
+//========================================================//
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Main Colors
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  The base color pallette for the
+//  website.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+$main-colors: (
+    'dark-dark':    #162126,
+    'dark':         #2C393F,
+    'med-dark':     #425259,
+    'med':          #66777F,
+    'med-light':    #97A9B2,
+    'light':        #C3D1D8,
+    'light-light':  #EFF6F9
+);
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Accent Colors
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Array of accent color options,
+//  each with three shade variants.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+$accent-colors: (
+    'neutral': (
+        'light':      #97A9B2,
+        'med':        #66777F,
+        'dark':       #425259
+    ),
+  
+    'red': (
+        'light':      #BA635D,
+        'med':        #A04F49,
+        'dark':       #7A3C38
+    ),
+    
+    'orange': (
+        'light':      #BA7C5D,
+        'med':        #A06649,
+        'dark':       #7A4E38
+    ),
+    
+    'yellow': (
+        'light':      #BAA45D,
+        'med':        #A08C49,
+        'dark':       #7A6C3D
+    ),
+  
+    'green': (
+        'light':      #87AD79,
+        'med':        #6E9361,
+        'dark':       #526D48
+    ),
+    
+    'blue': (
+        'light':      #6697CC,
+        'med':        #5280B2,
+        'dark':       #40658C
+    )
+);
+  
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Color Theme Maps
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Arrays that indicate colors to
+//  be used in a particular color
+//  theme.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+$theme-maps: (
+    'dark-dark': (
+        'text':     white,
+        'main1':    ( 'map': 'main',    'shade': 'dark-dark' ),
+        'main2':    ( 'map': 'main',    'shade': 'dark' ),
+        'accent1':  ( 'map': 'accent',  'shade': 'med' ),
+        'accent2':  ( 'map': 'main',    'shade': 'med-light' )
+    ),
+    'dark': (
+        'text':     white,
+        'main1':    ( 'map': 'main',    'shade': 'dark' ),
+        'main2':    ( 'map': 'main',    'shade': 'dark-dark' ),
+        'accent1':  ( 'map': 'accent',  'shade': 'light' ),
+        'accent2':  ( 'map': 'main',    'shade': 'med' )
+    ),
+    'light': (
+        'text':     black,
+        'main1':    ( 'map': 'main',    'shade': 'light' ),
+        'main2':    ( 'map': 'main',    'shade': 'light-light' ),
+        'accent1':  ( 'map': 'accent',  'shade': 'dark' ),
+        'accent2':  ( 'map': 'main',    'shade': 'med' )
+    ),
+    'light-light': (
+        'text':     black,
+        'main1':    ( 'map': 'main',    'shade': 'light-light' ),
+        'main2':    ( 'map': 'main',    'shade': 'light' ),
+        'accent1':  ( 'map': 'accent',  'shade': 'med' ),
+        'accent2':  ( 'map': 'main',    'shade': 'med-dark' )
+    ),
+    'color': (
+        'text':     black,
+        'main1':    ( 'map': 'accent',  'shade': 'light' ),
+        'main2':    ( 'map': 'accent',  'shade': 'med' ),
+        'accent1':  ( 'map': 'main',    'shade': 'dark' ),
+        'accent2':  ( 'map': 'main',    'shade': 'light-light' )
+    )
+);
+  
+  

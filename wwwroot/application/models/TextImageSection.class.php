@@ -41,6 +41,8 @@ class TextImageSection extends ContentModel
     parent::__construct();
     
     $this->setContent( 'tpl_text_image_section.php' );
+    $this->addLocalCss( 'ti_sec.css' );
+
     $this->setText( $text_file, $text_path );
     $this->setImage( $img_file, $img_path, $img_pos );
   }

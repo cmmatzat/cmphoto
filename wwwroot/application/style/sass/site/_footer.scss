@@ -1,0 +1,13 @@
+//========================================================//
+//  Site > Footer
+//========================================================//
+//  Style for the universal site footer.
+//========================================================//
+
+footer {
+    padding: $spacer-el;
+    background-color: black;
+    color: map-get($main-colors, 'dark');
+    font-size: 10pt;
+    text-align: center;
+}

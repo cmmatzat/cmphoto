@@ -1,13 +1,17 @@
-// Base
+//========================================================//
+//  Master
+//========================================================//
+//  Master stylesheet for the website.
+//  Includes style for universal elements, like navbar
+//  and footer, as well as default style for section
+//  blocks and key site elements.
+//========================================================//
 
-@import "base/variables";
-@import "base/mixins";
-@import "base/functions";
-@import "base/reset";
+// Import Site Utilities
+@import "utilities/all";
 
-// Components
-
-@import "components/page";
-@import "components/nav";
-@import "components/sections";
-@import "components/templates/gallery";
+// Import Site Style
+@import "site/defaults";
+@import "site/elements";
+@import "site/navbar";
+@import "site/footer";
