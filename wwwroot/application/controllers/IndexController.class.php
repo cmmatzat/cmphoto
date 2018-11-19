@@ -45,22 +45,22 @@ class IndexController extends Controller
 
     $portfolio = new ImageLinkSection( array(
       array(
-        'image' => 'corey-matzat.jpg',
+        'image' => 'kc-triathlon-swimmer.jpg',
         'url' => '/portfolio/sports',
         'label' => 'Sports'
       ),
       array(
-        'image' => 'corey-matzat.jpg',
+        'image' => 'chisholm-family-portrait.jpg',
         'url' => '/portfolio/portraits',
         'label' => 'Portraits'
       ),
       array(
-        'image' => 'corey-matzat.jpg',
+        'image' => 'saint-vrain-creek.jpg',
         'url' => '/portfolio/nature',
         'label' => 'Nature'
       )
     ), false, 'cnt_home_portfolio_links.php' );
-    $portfolio->setClass( 'theme-dark' );
+    $portfolio->setClass( 'theme-dark-dark' );
     $this->page_model->addContent( $portfolio );
 
     $this->page_model->printPage();
