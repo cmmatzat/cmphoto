@@ -10,32 +10,15 @@
     }
 };
 
-@mixin themify($colors: $accent-colors, $themes: $themes) {
-
-    // Iterate over each accent color
-    @each $color, $color-map in $colors {
-
-        $accent-color: $color-map !global;
-
-        // Iterate over each theme
-        @each $theme, $theme-map in $themes {
-
-            // Create a selector
+@mixin themify( $property, $variant, $themes: $theme-maps, $accents: $accent-colors ) {
+    @each $theme, $color-maps in $themes {
+        @each $color, $shades in $accents {
             &.theme-#{$color}.theme-#{$theme},
             .theme-#{$color} &.theme-#{$theme},
             .theme-#{$color}.theme-#{$theme} &,
             .theme-#{$color} .theme-#{$theme} & {
-
-                // Set the theme variables with `!global`
-                $theme-colors: $theme-map !global;
-
-                // Output user content
-                @content;
+                #{$property}: get-theme-color( $color-maps, $variant, $shades );
             }
         }
-
-        $theme-colors: $default-theme !global;
     }
-
-    $accent-color: $default-color !global;
 }

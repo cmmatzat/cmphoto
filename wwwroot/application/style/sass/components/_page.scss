@@ -18,19 +18,15 @@ body {
         display: block;
         min-height: 80vh;
 
-        @include themify {
-            background-color: theme-color('main1');
-        }
+        @include themify( 'background-color', 'main1' );
     }
 }
 
 section {
     padding: $spacer-sec;
 
-    @include themify {
-        background-color: theme-color('main1');
-        color: theme-color('text');
-    }
+    @include themify( 'background-color', 'main1' );
+    @include themify( 'color', 'text' );
 
     .content-width {
         max-width: $content-width;
@@ -44,9 +40,7 @@ section {
         text-transform: uppercase;
         font-family: $header-font;
 
-        @include themify {
-            color: theme-color('accent1');
-        }
+        @include themify( 'color', 'accent1' );
     }
 
     @at-root h3 {
@@ -56,9 +50,7 @@ section {
         text-transform: uppercase;
         font-style: italic;
 
-        @include themify {
-            color: theme-color('accent2');
-        }
+        @include themify( 'color', 'accent2' );
     }
 
     @at-root p {
@@ -66,26 +58,20 @@ section {
         font-size: 12pt;
         line-height: 16pt;
 
-        @include themify {
-            color: theme-color('text');
-        }
+        @include themify( 'color', 'text' );
 
         a.inline-link {
             font-weight: bold;
             text-decoration: none;
 
-            @include themify {
-                color: theme-color('accent1');
-            }
+            @include themify( 'color', 'accent1' );
 
             @include min_screen(600px) {
 
                 transition: color 200ms ease-in-out;
 
                 &:hover {
-                    @include themify {
-                        color: theme-color('accent2');
-                    }
+                    @include themify( 'color', 'accent2' );
                 }
             }
         }
@@ -101,19 +87,15 @@ a.hollow-button {
     font-weight: bold;
     text-transform: uppercase;
 
-    @include themify {
-        border-color: theme-color('accent1');
-        color: theme-color('accent1');
-    }
+    @include themify( 'border-color', 'accent1' );
+    @include themify( 'color', 'accent1' );
 
     @include min_screen(600px) {
         transition: color 200ms ease-in-out, border-color 200ms ease-in-out;
 
-        &:hover {
-            @include themify {
-                border-color: theme-color('accent2');
-                color: theme-color('accent2');
-            }
+        &:hover {  
+            @include themify( 'border-color', 'accent2' );
+            @include themify( 'color', 'accent2' );
         }
     }
 }
