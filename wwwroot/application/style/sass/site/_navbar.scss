@@ -22,8 +22,16 @@ nav {
         flex-flow: row nowrap;
         height: $nav-height;
 
+        @include min_screen($nav-format-cutoff) {
+            flex: 1 1 auto;
+        }
+
         #nav-control {
             flex: 0 0 $nav-height;
+
+            @include min_screen($nav-format-cutoff) {
+                display: none;
+            }
         }
 
         #nav-title {
@@ -45,20 +53,35 @@ nav {
             @include min_screen(500px) {
                 font-size: 16pt;
             }
+
+            @include min_screen($nav-format-cutoff) {
+                text-align: left;
+            }
         }
 
         #nav-logo {
             flex: 0 0 $nav-height;
             position: relative;
 
+            @include min_screen($nav-format-cutoff) {
+                order: -1;
+                padding-right: 0;
+            }
+
             img {
                 position: absolute;
-                top: 50%;
+                top: 45%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 height: 50%;
             }
         }
+    }
+
+    @include min_screen($nav-format-cutoff) {
+        display: flex;
+        flex-flow: row nowrap;
+        overflow: show;
     }
 
     a {
@@ -74,6 +97,17 @@ nav {
             background-color: map-get($main-colors, 'dark');
             height: $nav-height - 1;
             border-bottom: 1px solid black;
+
+            @include min_screen($nav-format-cutoff) {
+                flex: 0 0 auto;
+                height: $nav-height;
+                border: none;
+                background-color: black;
+
+                &:hover {
+                    background-color: map-get($main-colors, 'dark');
+                }
+            }
         }
     }
 
@@ -85,6 +119,15 @@ nav {
         display: flex;
         flex-flow: row wrap;
 
+        @include min_screen($nav-format-cutoff) {
+            flex: 0 0 auto;
+            flex-flow: column nowrap;
+
+            &:hover {
+                height: 136px;
+            }
+        }
+
         .nav-link {
             flex: 1 1 auto;
         }
@@ -94,6 +137,10 @@ nav {
             flex: 0 0 $nav-height - 1;
             padding: 0;
             text-align: center;
+
+            @include min_screen($nav-format-cutoff) {
+                display: none;
+            }
         }
 
         .nav-menu-link {
@@ -103,6 +150,11 @@ nav {
             padding: 0 (2 * $spacer-el); 
             background-color: map-get($main-colors, 'med');
             height: $nav-menu-height - 1;
+
+            @include min_screen($nav-format-cutoff) {
+                height: $nav-menu-height;
+                border: none;
+            }
         }
     }
 }
