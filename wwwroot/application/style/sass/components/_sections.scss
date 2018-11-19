@@ -38,44 +38,113 @@ header {
 }
 
 .ti-sec {
-    display: grid;
+    display: flex;
     justify-items: center;
-    grid-template-rows: auto auto;
-    grid-template-columns: auto;
-    grid-template-areas:
-        "ti-img"
-        "ti-txt";
+    align-items: center;
 
-    &.img-bottom {
-        grid-template-areas:
-            "ti-txt"
-            "ti-img";
+    &.img-top {
+        flex-flow: column nowrap;
     }
 
-    @include min_screen(600px) {
+    &.img-bottom {
+        flex-flow: column-reverse nowrap;
+    }
+
+    @include min-screen(600px) {
         &.img-left {
-            grid-template-rows: auto;
-            grid-template-columns: auto 60%;
-            grid-template-areas:
-                "ti-img ti-txt";
+            flex-flow: row nowrap;
         }
 
         &.img-right {
-            grid-template-rows: auto;
-            grid-template-columns: 60% auto;
-            grid-template-areas:
-                "ti-txt ti-img";
+            flex-flow: row-reverse nowrap;
         }
     }
 
     .ti-sec-img {
         margin: $spacer-el;
-        grid-area: ti-img;
+        flex: 0 1 auto;
         max-width: $img-width;
         max-height: 50vh;
     }
 
+    @include min-screen(600px) {
+        .ti-sec-img {
+            max-width: 30vw;
+            min-height: 180px; 
+        }
+    }
+
     .ti-sec-txt {
-        grid-area: ti-txt;
+        flex: 1 1 auto;
+    }
+}
+
+.il-sec {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    
+    @include min-screen(500px) {
+        flex-flow: row nowrap;
+    }
+
+    .il-link {
+        position: relative;
+        padding: $spacer-el;
+        flex: 0 1 auto;
+
+        .il-image {
+            max-width: $img-width-no-buffer;
+            display: block;
+            @include min-screen(500px) {
+                max-height: 80vh;
+                min-height: 180px;
+            }
+        }
+
+        .il-label {
+            position: absolute;
+            bottom: 2 * $spacer-el + $img-frame;
+            left: 2 * $spacer-el + $img-frame;  
+            padding: $spacer-el;
+            margin: 0;
+            font-size: 18pt;
+            line-height: 16pt;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            text-align: center;
+            text-transform: uppercase;
+            opacity: .7;
+            font-family: $header-font;
+
+            @include min-screen(500px) {
+                padding: $spacer-el / 2;
+                bottom: 1.5 * $spacer-el + $img-frame;
+                left: 1.5 * $spacer-el + $img-frame;  
+                font-size: 12pt;
+                line-height: 8pt;
+            }
+
+            @include min-screen(800px) {
+                font-size: 15pt;
+                line-height: 10pt;
+                bottom: 2 * $spacer-el + $img-frame;
+                left: 2 * $spacer-el + $img-frame;  
+            }
+
+            @include min-screen(1200px) {
+                font-size: 18pt;
+                padding: $spacer-el;
+                line-height: 16pt;
+            }
+
+            @include min-screen(1600px) {
+                font-size: 20pt;
+                line-height: 18pt;
+            }
+        }
     }
 }
