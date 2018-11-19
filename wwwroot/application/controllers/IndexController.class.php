@@ -5,6 +5,7 @@
 
 // Include needed Content Models
 include_once( MODEL_PATH . 'TextImageSection.class.php' );
+include_once( MODEL_PATH . 'ImageLinkSection.class.php' );
 
 class IndexController extends Controller
 {
@@ -38,8 +39,28 @@ class IndexController extends Controller
     $this->page_model->addLocalJs( 'hdr_home.js' );
 
     $welcome = new TextImageSection( 'cnt_home_welcome.php', 'corey-matzat.jpg', array( 'v' => 'bottom', 'h' => 'left' ) );
-    $welcome->setClass( 'theme-med' );
+    $welcome->setClass( 'theme-light-light' );
     $this->page_model->addContent( $welcome );
+
+    $portfolio = new ImageLinkSection( array(
+      array(
+        'image' => 'corey-matzat.jpg',
+        'url' => '/portfolio/sports',
+        'label' => 'Sports'
+      ),
+      array(
+        'image' => 'corey-matzat.jpg',
+        'url' => '/portfolio/portraits',
+        'label' => 'Portraits'
+      ),
+      array(
+        'image' => 'corey-matzat.jpg',
+        'url' => '/portfolio/nature',
+        'label' => 'Nature'
+      )
+    ), false, 'cnt_home_portfolio_links.php' );
+    $portfolio->setClass( 'theme-dark' );
+    $this->page_model->addContent( $portfolio );
 
     $this->page_model->printPage();
   }
