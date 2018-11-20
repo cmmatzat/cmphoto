@@ -10,16 +10,16 @@
  * ----------------------------------- *
  * Model: TextImageSection
  *	Requires: text_path, image_path
- *	Optional: id, class, img_pos
+ *	Optional: id, class, img_pos, alt
  * ----------------------------------- */
 
 // Get this section's variables
 $sec_vars = array_shift( $pg_vars['ti_sec'] );
 ?>
 
-<section <?php if ( $sec_vars['id'] ) { echo 'id="' . $sec_vars['id'] . '"'; } ?> <?php if ( $sec_vars['class'] ) { echo 'class="' . $sec_vars['class'] . '"'; } ?>>
-  <div class="ti-sec content-width <?php if ( array_key_exists( 'img_pos', $sec_vars ) ) { echo $sec_vars['img_pos']; } ?>">
-    <img class="ti-sec-img framed" src="<?php echo $sec_vars['image_path']; ?>"/>
+<section <?php echo_id( $sec_vars ); echo_class( $sec_vars ); ?>>
+  <div class="ti-sec content-width <?php echo_array_key( $sec_vars, 'img_pos' ); ?>">
+    <img class="ti-sec-img framed" <?php echo_alt_text( $sec_vars, 'alt', 'image_path' ); echo_img_path( $sec_vars['image_path'] ); ?> preload/>
     <div class="ti-sec-txt">
       <?php include $sec_vars['text_path']; ?>
     </div>

@@ -16,8 +16,8 @@
 $sec_vars = array_shift( $pg_vars['std_sec'] );
 ?>
 
-<section <?php if ( $sec_vars['id'] ) { echo 'id="' . $sec_vars['id'] . '"'; } ?> <?php if ( $sec_vars['class'] ) { echo "class='" . $sec_vars['class'] . "'"; } ?>>
+<section <?php echo_id( $sec_vars ); echo_class( $sec_vars ); ?>>
   <?php if ( $sec_vars['restrict'] ): ?><div class="content-width"><?php endif; ?>
     <?php include $sec_vars['content_path']; ?>
-    <?php if ( $sec_vars['restrict'] ): ?></div><?php endif; ?>
+  <?php if ( $sec_vars['restrict'] ): ?></div><?php endif; ?>
 </section>

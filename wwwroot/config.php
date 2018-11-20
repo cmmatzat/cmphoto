@@ -4,7 +4,7 @@
       website. It includes path constants, defaults,
       and includes base framework classes.           */
 
-  /* ~~~~~ PATH CONSTANTS ~~~~~ */ 
+  /* ~~~~~ PATH CONSTANTS ~~~~~ */
   // Root Paths
   define( "DS",             DIRECTORY_SEPARATOR );
   define( "ROOT",           $_SERVER["DOCUMENT_ROOT"] );  // No trailing DS
@@ -20,7 +20,7 @@
   define( "IMG_PATH",     APP_PATH . "images" . DS );
   define( "GALLERY_PATH", IMG_PATH . "galleries" . DS );
   define( "LOGO_PATH",    IMG_PATH . "logo" . DS );
-  
+
   // Style Paths
   define( "STYLE_PATH", APP_PATH . "style" . DS );
   define( "CSS_PATH",   STYLE_PATH . "css" . DS );
@@ -36,6 +36,7 @@
   include_once( FRAMEWORK_PATH . 'Controller.class.php' );
   include_once( FRAMEWORK_PATH . 'ContentModel.class.php' );
   include_once( FRAMEWORK_PATH . 'PageModel.class.php' );
+  include_once( FRAMEWORK_PATH . 'HelperFunctions.php' );
 
   // Define the default Controller
   defined( "DEFAULT_CONTROLLER" ) or define( "DEFAULT_CONTROLLER", "IndexController" );

@@ -15,6 +15,7 @@
       'img_pos' - Image relative position
       'img_path' - Alternate image path
       'text_path' - Alternate text path
+      'alt' - Image alt text
                                               */
 
 class TextImageSection extends ContentModel
@@ -39,7 +40,7 @@ class TextImageSection extends ContentModel
       )
   {
     parent::__construct();
-    
+
     $this->setContent( 'tpl_text_image_section.php' );
     $this->addLocalCss( 'ti_sec.css' );
 
@@ -90,6 +91,16 @@ class TextImageSection extends ContentModel
     $pos_str = ( array_key_exists( 'v', $pos ) && $pos['v'] == 'bottom' ) ? 'img-bottom' : 'img-top';
     $pos_str .= ( array_key_exists( 'h', $pos ) && $pos['h'] == 'right' ) ? ' img-right' : ' img-left';
     $this->setVarKeyValuePair( 'img_pos', $pos_str );
+  }
+
+  /***************************************
+    setImageAltText()
+  ----------------------------------------
+    Set the image alt text
+  ***************************************/
+  public function setImageAltText( $text )
+  {
+    $this->setVarKeyValuePair( 'alt', $text );
   }
 }
 ?>
