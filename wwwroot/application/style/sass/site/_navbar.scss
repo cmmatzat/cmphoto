@@ -6,103 +6,179 @@
 
 // Full Navigation Bar
 nav {
-    height: $nav-height;
-    width: 100%;
-    overflow: hidden;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    transition: $nav-transition;
-    z-index: 1000;
+    position:           fixed;
+    top:                0;
+    z-index:            1000;
+    width:              100%;
+    height:             $nav-height;
+    overflow:           hidden;
+    background-color:   black;
+    transition:         $nav-transition;
 
-    // Navigation Header
-    // Includes menu icon, site title, and logo
+    @include min_screen($nav-format-cutoff) {
+        display:    flex;
+        flex-flow:  row nowrap;
+        overflow:   visible;
+    }
+
+    // Navigation Header Bar
     .nav-header {
-        display: flex;
-        flex-flow: row nowrap;
-        height: $nav-height;
+        display:        flex;
+        flex-flow:      row nowrap;
+        height:         $nav-height;
 
+        @include min_screen($nav-format-cutoff) {
+            flex:       2 1 auto;
+            overflow:   visible;
+        }
+
+        // Nav Menu Toggle Icon (Mobile Only)
         #nav-control {
-            flex: 0 0 $nav-height;
+            float:  left;
+            flex:   0 0 $nav-height;
+
+            @include min_screen($nav-format-cutoff) {
+                display:    none;
+            }
         }
 
         #nav-title {
-            overflow: hidden;
-            flex: 1 1 auto;
-            line-height: $nav-height;
-            font-size: 8pt;
-            margin: 0;
-            text-align: center;
-            padding: 0;
+            float:          left;
+            flex:           1 1 auto;
+            margin:         0;
+            padding:        0;
+            line-height:    $nav-height;
+            overflow:       hidden;
+            font-size:      8pt;
+            font-weight:    lighter;
+            font-family:    $header-font;
+            text-align:     center;
             text-transform: uppercase;
-            font-weight: lighter;
-            font-family: $header-font;
 
             @include min_screen(400px) {
-                font-size: 11.5pt;
+                font-size:  11.5pt;
             }
 
             @include min_screen(500px) {
-                font-size: 16pt;
+                font-size:  16pt;
+            }
+
+            @include min_screen($nav-format-cutoff) {
+                text-align: left;
             }
         }
 
         #nav-logo {
-            flex: 0 0 $nav-height;
-            position: relative;
+            float:      right;
+            position:   relative;
+            flex:       0 0 $nav-height;
+
+            @include min_screen($nav-format-cutoff) {
+                order:          -1;
+                padding-right:  0;
+            }
 
             img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                height: 50%;
+                position:   absolute;
+                top:        45%;
+                left:       50%;
+                transform:  translate(-50%, -50%);
+                height:     50%;
             }
         }
     }
 
     a {
-        line-height: $nav-height;
-        text-decoration: none;
-        color: white;
-        display: block;
-        height: $nav-height;
-        padding: 0 $spacer-el; 
+        display:            block;
+        padding:            0 $spacer-el; 
+        height:             $nav-height;
+        line-height:        $nav-height;
+        color:              white;
+        text-decoration:    none;
 
         // .nav-link is a main navigation button
         &.nav-link, &.nav-menu-control {
-            background-color: map-get($main-colors, 'dark');
-            height: $nav-height - 1;
-            border-bottom: 1px solid black;
+            height:             $nav-height - 1;
+            background-color:   map-get($main-colors, 'dark');
+            border-bottom:      1px solid black;
+
+            @include min_screen($nav-format-cutoff) {
+                flex:               0 0 auto;
+                height:             $nav-height;
+                border:             none;
+                background-color:   black;
+
+                &:hover {
+                    background-color:   map-get($main-colors, 'dark');
+                }
+            }
         }
     }
 
     // .nav-menu is a drop-down navigation section
     .nav-menu {
-        height: $nav-height;
-        overflow: hidden;
+        display:    flex;
+        flex-flow:  row wrap;
+        height:     $nav-height;
+        overflow:   hidden;
         transition: $nav-transition;
-        display: flex;
-        flex-flow: row wrap;
 
-        .nav-link {
-            flex: 1 1 auto;
+        @include min_screen($nav-format-cutoff) {
+            position:   relative;
+            flex:       0 0 auto;
+            flex-flow:  column nowrap;
+
+            &:hover {
+                overflow:   visible;
+            }
         }
 
-        .nav-menu-control {
-            border-left: 1px solid black;
-            flex: 0 0 $nav-height - 1;
-            padding: 0;
-            text-align: center;
+        .nav-menu-header {
+            display:    flex;
+            flex-flow:  row nowrap;
+            flex:       0 0 100%;
+
+            .nav-link {
+                flex:   1 1 auto;
+            }
+    
+            .nav-menu-control {
+                flex:           0 0 $nav-height - 1;
+                padding:        0;
+                border-left:    1px solid black;
+                text-align:     center;
+    
+                @include min_screen($nav-format-cutoff) {
+                    display:    none;
+                }
+            }
         }
 
-        .nav-menu-link {
-            flex: 0 0 100%;
-            border-bottom: 1px solid black;
-            line-height: $nav-menu-height;
-            padding: 0 (2 * $spacer-el); 
-            background-color: map-get($main-colors, 'med');
-            height: $nav-menu-height - 1;
+        .nav-menu-links {
+            flex:   0 0 100%;
+
+            @include min_screen($nav-format-cutoff) {
+                position:   absolute;
+                top:        $nav-height;
+                transition: top 300ms ease-in-out;
+            }
+
+            .nav-menu-link {
+                padding:            0 (2 * $spacer-el); 
+                height:             $nav-menu-height - 1;
+                line-height:        $nav-menu-height;
+                border-bottom:      1px solid black;
+                background-color:   map-get($main-colors, 'med');
+
+                @include min_screen($nav-format-cutoff) {
+                    height:     $nav-menu-height;
+                    border:     none;
+
+                    &:hover {
+                        background-color:   map-get($main-colors, 'med-dark');
+                    }
+                }
+            }
         }
     }
 }
