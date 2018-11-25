@@ -1,0 +1,2 @@
+<h2>Portfolio</h2>
+<p>My photography typically falls into one of three categories: <a class="inline-link" href="/portfolio/sports">Sports</a>, <a class="inline-link" href="/portfolio/portraits">Portraits</a>, and <a class="inline-link" href="/portfolio/nature">Nature</a>. Learn more about each of these categories below, and explore my photo galleries to get a better feel for my work!</p>

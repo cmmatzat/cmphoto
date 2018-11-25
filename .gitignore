@@ -2,3 +2,4 @@
 .vscode
 *.map
 *.css
+/wwwroot/application/images/galleries
