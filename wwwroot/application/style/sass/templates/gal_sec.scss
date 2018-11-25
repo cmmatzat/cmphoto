@@ -1,0 +1,73 @@
+//========================================================//
+//  Templates > Gallery Section
+//========================================================//
+//  Unique style for a Gallery Section
+//========================================================//
+
+// Import Utilities
+@import "../utilities/all";
+
+// Local Variables
+$gal-mobile-cutoff: 600px;
+
+// Define Style
+.gal-sec {
+    display: none;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: $spacer-sec;
+
+    @include min_screen($gal-mobile-cutoff) {
+        flex-flow: row wrap;
+    }
+
+    &.active {
+        display: block;
+        display: flex;
+    }
+
+    .gal-img {
+        margin: $spacer-el;
+        max-width: calc(100% - (2 * (#{$spacer-el} + #{$img-frame})));
+        height: auto;
+        flex: 1 1 auto;
+
+        @include min_screen($gal-mobile-cutoff) {
+            cursor: pointer;
+            flex: 0 0 auto;
+
+            &.shrink {
+                width: calc(100% - 20px);
+                height: auto;
+            }
+        }
+
+        img {
+            width: calc(100% - (2 * #{$img-frame}));
+            height: auto;
+            
+
+            @include min_screen($gal-mobile-cutoff) {
+                height: 180px;
+                width: auto;
+            }
+
+            @include min_screen(800px) {
+                height: 240px;
+            }
+
+            @include min_screen(1000px) {
+                height: 300px;
+            }
+
+            @include min_screen(1200px) {
+                height: 360px;
+            }
+
+            @include min-screen(1500px) {
+                height: 450px;
+            }
+        }
+    }
+}

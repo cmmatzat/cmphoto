@@ -52,6 +52,10 @@ function echo_img_path( $img_path )
   {
     echo 'data-full="' . $dir . DS . $name . '.full.' . $ext . '" ';
   }
+  else
+  {
+    echo 'data-full="' . $img_path . '" ';
+  }
 }
 
 /***************************************
