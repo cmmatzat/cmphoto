@@ -45,6 +45,7 @@ class ContactController extends Controller
     $form = new StandardSection( 'frm_contact.php' );
     $form->addLocalPhp( 'frm_contact_handler.php' );
     $form->addLocalJs( 'frm_contact_listener.js' );
+    $form->setClass( 'theme-dark' );
     $this->page_model->addContent( $form );
 
     // Print Page

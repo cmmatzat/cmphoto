@@ -2,9 +2,12 @@
 /* Add event listener to form */
 var form = document.querySelector( "form[contact-form]" );
 form.addEventListener( "submit" , submissionHandler );
+console.log("Set Listener!");
 
 /* Handle Submit Button */
 function submissionHandler( event ) {
+
+    console.log("Submit Detected");
 
     // Override normal submit button operation
     event.preventDefault();
@@ -31,19 +34,24 @@ function submitForm( data ) {
     // Handle request
     xhttp.onreadystatechange = function() {
         if ( this.readyState == 4 && this.status == 200 ) {
+            console.log("Request Answered");
             handleResponse( this.responseText );
         }
     };
 
     // Send request
-    xhttp.open( "POST", "/application/scripts/contact_form_handler.php", true );
+    xhttp.open( "POST", "/application/scripts/php/frm_contact_handler.php", true );
     xhttp.setRequestHeader( "Content-type" , "application/x-www-form-urlencoded" );
     xhttp.send( objToText( data ) );
+
+    console.log("Request Sent");
 
 }
 
 /* Handles the php response to form submission */
 function handleResponse( responseText ) {
+
+    console.log(responseText);
 
     // Decode the response
     var response = JSON.parse( responseText );

@@ -44,13 +44,18 @@ section {
     @include themify( 'background-color', 'main1' );
     @include themify( 'color', 'text' );
 
+    .standout {
+        @include themify( 'background-color', 'main2' );
+        padding: $spacer-el
+    }
+
     .content-width {
         max-width: $content-width;
         margin: 0 auto;
     }
 
     @at-root h2 {
-        margin: $spacer_el;
+        margin: $spacer-el;
         font-size: 28pt;
         line-height: 28pt;
         text-transform: uppercase;
@@ -60,7 +65,7 @@ section {
     }
 
     @at-root h3 {
-        margin: $spacer_el;
+        margin: $spacer-el;
         font-size: 14pt;
         line-height: 14pt;
         text-transform: uppercase;
@@ -70,7 +75,7 @@ section {
     }
 
     @at-root p {
-        margin: $spacer_el;
+        margin: $spacer-el;
         font-size: 12pt;
         line-height: 16pt;
 

@@ -22,7 +22,7 @@ a.hollow-button {
     @include min_screen(600px) {
         transition: color 200ms ease-in-out, border-color 200ms ease-in-out;
 
-        &:hover {  
+        &:hover {
             @include themify( 'border-color', 'accent2' );
             @include themify( 'color', 'accent2' );
         }
@@ -51,4 +51,16 @@ img.framed {
     box-shadow: $shadow;
     background-color: white;
     padding: $img-frame;
+}
+
+form {
+    margin: $spacer-el;
+    padding: $spacer-el;
+    @include themify( 'background-color', 'main2' );
+
+    fieldset {
+        display: block;
+        padding: $spacer-el;
+        border: 0 none;
+    }
 }

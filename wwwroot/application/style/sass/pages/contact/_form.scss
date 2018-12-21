@@ -4,3 +4,60 @@
 //  Style for the Contact page Contact Form
 //========================================================//
 
+form[contact-form] {
+    .cf-hide {
+        display: none;
+    }
+
+    label.cf-error {
+        color: map-get( map-get( $accent-colors, 'red' ), 'med' );
+        margin-bottom: $spacer-el / 4;
+        display: block;
+        font-weight: bold;
+        font-size: 10pt;
+        text-transform: uppercase;
+    }
+
+    input,textarea {
+        width: calc(100% - #{$spacer-el});
+        padding: $spacer-el / 2;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        @include themify( 'background-color', 'accent2' );
+        border: 0 none;
+        font-size: 12pt;
+        border-radius: 0;
+
+        &::placeholder {
+            color: black;
+            opacity: 1;
+        }
+
+        &:focus {
+            outline: none;
+            background-color: white !important;
+        }
+    }
+
+    textarea {
+        min-height: 200px;
+    }
+
+    button {
+        padding: $spacer-el / 2;
+        min-width: 240px;
+        margin: 0 auto;
+        font-size: 12pt;
+        @include themify( 'background-color', 'accent1' );
+        @include themify( 'color', 'main1' );
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: 0 none;
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+}
